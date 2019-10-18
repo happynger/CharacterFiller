@@ -1,0 +1,14 @@
+C:\Users\orkha\OneDrive\Projects\CharaterAutoFiller\CharacterFiller\CharacterFiller\bin\Debug\CharacterFiller.exe.config
+C:\Users\orkha\OneDrive\Projects\CharaterAutoFiller\CharacterFiller\CharacterFiller\bin\Debug\CharacterFiller.exe
+C:\Users\orkha\OneDrive\Projects\CharaterAutoFiller\CharacterFiller\CharacterFiller\bin\Debug\CharacterFiller.pdb
+C:\Users\orkha\OneDrive\Projects\CharaterAutoFiller\CharacterFiller\CharacterFiller\obj\Debug\CharacterFiller.csprojAssemblyReference.cache
+C:\Users\orkha\OneDrive\Projects\CharaterAutoFiller\CharacterFiller\CharacterFiller\obj\Debug\MainWindow.g.cs
+C:\Users\orkha\OneDrive\Projects\CharaterAutoFiller\CharacterFiller\CharacterFiller\obj\Debug\App.g.cs
+C:\Users\orkha\OneDrive\Projects\CharaterAutoFiller\CharacterFiller\CharacterFiller\obj\Debug\CharacterFiller_MarkupCompile.cache
+C:\Users\orkha\OneDrive\Projects\CharaterAutoFiller\CharacterFiller\CharacterFiller\obj\Debug\CharacterFiller_MarkupCompile.lref
+C:\Users\orkha\OneDrive\Projects\CharaterAutoFiller\CharacterFiller\CharacterFiller\obj\Debug\MainWindow.baml
+C:\Users\orkha\OneDrive\Projects\CharaterAutoFiller\CharacterFiller\CharacterFiller\obj\Debug\CharacterFiller.g.resources
+C:\Users\orkha\OneDrive\Projects\CharaterAutoFiller\CharacterFiller\CharacterFiller\obj\Debug\CharacterFiller.Properties.Resources.resources
+C:\Users\orkha\OneDrive\Projects\CharaterAutoFiller\CharacterFiller\CharacterFiller\obj\Debug\CharacterFiller.csproj.GenerateResource.cache
+C:\Users\orkha\OneDrive\Projects\CharaterAutoFiller\CharacterFiller\CharacterFiller\obj\Debug\CharacterFiller.exe
+C:\Users\orkha\OneDrive\Projects\CharaterAutoFiller\CharacterFiller\CharacterFiller\obj\Debug\CharacterFiller.pdb
