@@ -30,12 +30,12 @@ namespace CharacterFiller
 			InitializeComponent();
 			attributes = new List<IItem>()
 			{
-				new AttributeItem { ID = 0, Name = "Strength", Value = 0 },
-				new AttributeItem { ID = 1, Name = "Dexterity", Value = 0 },
-				new AttributeItem { ID = 2, Name = "Constitution", Value = 0 },
-				new AttributeItem { ID = 3, Name = "Intelligence", Value = 0 },
-				new AttributeItem { ID = 4, Name = "Wisdom", Value = 0 },
-				new AttributeItem { ID = 5, Name = "Charisma", Value = 0 },
+				new AttributeItem { ID = 0, Name = "Strength", PDF_Name = "STR", Value = 0 },
+				new AttributeItem { ID = 1, Name = "Dexterity", PDF_Name = "DEX", Value = 0 },
+				new AttributeItem { ID = 2, Name = "Constitution", PDF_Name = "CON", Value = 0 },
+				new AttributeItem { ID = 3, Name = "Intelligence", PDF_Name = "INT", Value = 0 },
+				new AttributeItem { ID = 4, Name = "Wisdom", PDF_Name = "WIS", Value = 0 },
+				new AttributeItem { ID = 5, Name = "Charisma", PDF_Name = "CHA", Value = 0 },
 			};
 			skills = new List<IItem>()
 			{
@@ -65,14 +65,11 @@ namespace CharacterFiller
 		private void Check(ref List<IItem> list, ToggleButton button, bool prof)
 		{
 			var items = from i in list
-						where i.Name == button.Name
+						where i.Name == (string)button.Tag
 						select i;
 
-			foreach (var item in items)
-			{
-				item.Prof = prof;
-				list[item.ID] = item;
-			}
+			var item = items.Single();
+			item.Prof = prof;
 		}
 
 		#region EventHandling
@@ -146,15 +143,13 @@ namespace CharacterFiller
 				return;
 
 			var items = from i in attributes
-						where i.Name == textbox.Name
+						where i.Name == (string)textbox.Tag
 						select i;
 
-			foreach (var item in items)
-			{
-				var attribute = item as AttributeItem;
-				attribute.Value = int.Parse(textbox.Text);
-				attributes[item.ID] = attribute;
-			}
+			var item = items.Single();
+
+			var attribute = item as AttributeItem;
+			attribute.Value = int.Parse(textbox.Text);
 		}
 		#endregion
 	}

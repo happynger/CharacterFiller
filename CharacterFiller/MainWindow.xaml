@@ -9,7 +9,7 @@
 	<Grid>
 		<TabControl HorizontalAlignment="Left" Height="569" VerticalAlignment="Top" Width="792">
 			<TabItem Header="Basis Information">
-				<Grid Background="#FFE5E5E5" d:IsLocked="True">
+				<Grid Background="#FFE5E5E5">
 					<Grid HorizontalAlignment="Left" Height="469" Margin="18,62,0,0" VerticalAlignment="Top" Width="758">
 						<Grid.RowDefinitions>
 							<RowDefinition/>
@@ -35,21 +35,22 @@
 						<Label Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">Alignment</Label>
 						<Label Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">XP</Label>
 						<Label Grid.Row="8" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">Speed</Label>
-						<TextBox x:Name="NameTB" Grid.Column="1" HorizontalAlignment="Center" Height="24" Text="(Name)" VerticalAlignment="Center" Width="359" TextAlignment="Center" GotKeyboardFocus="TextBoxSelected" Margin="10,12"/>
-						<TextBox x:Name="ClassTB" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Height="24" Text="(Class)" VerticalAlignment="Center" Width="359" TextAlignment="Center" GotKeyboardFocus="TextBoxSelected" Margin="10,12"/>
-						<TextBox x:Name="LevelTB" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" Height="24" Text="(Level)" VerticalAlignment="Center" Width="359" TextAlignment="Center" GotKeyboardFocus="TextBoxSelected" Margin="10,12"/>
-						<TextBox x:Name="BackgroundTB" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Height="24" Text="(Background)" VerticalAlignment="Center" Width="359" TextAlignment="Center" GotKeyboardFocus="TextBoxSelected" Margin="10,12"/>
-						<TextBox x:Name="PNameTB" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" Height="24" Text="(Player Name)" VerticalAlignment="Center" Width="359" TextAlignment="Center" GotKeyboardFocus="TextBoxSelected" Margin="10,12"/>
-						<TextBox x:Name="RaceTB" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" Height="24" Text="(Race)" VerticalAlignment="Center" Width="359" TextAlignment="Center" GotKeyboardFocus="TextBoxSelected" Margin="10,12"/>
-						<TextBox x:Name="AlignmentTB" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Center" Height="24" Text="(Alignment)" VerticalAlignment="Center" Width="359" TextAlignment="Center" GotKeyboardFocus="TextBoxSelected" Margin="10,12"/>
-						<TextBox x:Name="XPTB" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Center" Height="24" Text="(XP)" VerticalAlignment="Center" Width="359" TextAlignment="Center" GotKeyboardFocus="TextBoxSelected" Margin="10,12"/>
-						<TextBox x:Name="SpeedTB" Grid.Column="1" Grid.Row="8" HorizontalAlignment="Center" Height="24" Text="(Speed)" VerticalAlignment="Center" Width="359" TextAlignment="Center" GotKeyboardFocus="TextBoxSelected" Margin="10,12"/>
+						<TextBox x:Name="NameTB" Grid.Column="1" HorizontalAlignment="Center" Height="24" Text="(Name)" VerticalAlignment="Center" Width="359" TextAlignment="Center" GotKeyboardFocus="TextBoxSelected" Margin="10,12" FontSize="16"/>
+						<TextBox x:Name="ClassTB" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Height="24" Text="(Class)" VerticalAlignment="Center" Width="359" TextAlignment="Center" GotKeyboardFocus="TextBoxSelected" Margin="10,12" FontSize="16"/>
+						<TextBox x:Name="LevelTB" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" Height="24" Text="(Level)" VerticalAlignment="Center" Width="359" TextAlignment="Center" GotKeyboardFocus="TextBoxSelected" Margin="10,12" FontSize="16"/>
+						<TextBox x:Name="BackgroundTB" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Height="24" Text="(Background)" VerticalAlignment="Center" Width="359" TextAlignment="Center" GotKeyboardFocus="TextBoxSelected" Margin="10,12" FontSize="16"/>
+						<TextBox x:Name="PNameTB" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" Height="24" Text="(Player Name)" VerticalAlignment="Center" Width="359" TextAlignment="Center" GotKeyboardFocus="TextBoxSelected" Margin="10,12" FontSize="16"/>
+						<TextBox x:Name="RaceTB" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" Height="24" Text="(Race)" VerticalAlignment="Center" Width="359" TextAlignment="Center" GotKeyboardFocus="TextBoxSelected" Margin="10,12" FontSize="16"/>
+						<TextBox x:Name="AlignmentTB" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Center" Height="24" Text="(Alignment)" VerticalAlignment="Center" Width="359" TextAlignment="Center" GotKeyboardFocus="TextBoxSelected" Margin="10,12" FontSize="16"/>
+						<TextBox x:Name="XPTB" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Center" Height="24" Text="(XP)" VerticalAlignment="Center" Width="359" TextAlignment="Center" GotKeyboardFocus="TextBoxSelected" Margin="10,12" FontSize="16"/>
+						<TextBox x:Name="SpeedTB" Grid.Column="1" Grid.Row="8" HorizontalAlignment="Center" Height="24" Text="(Speed)" VerticalAlignment="Center" Width="359" TextAlignment="Center" GotKeyboardFocus="TextBoxSelected" Margin="10,12" FontSize="16"/>
 					</Grid>
 					<Label Content="Main Settings" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="28" FontWeight="Bold"/>
 				</Grid>
 			</TabItem>
 			<TabItem Header="Stats">
 				<Grid Background="#FFE5E5E5">
+					<!-- Attributes -->
 					<ListView Focusable="False" HorizontalContentAlignment="Stretch" Name="AttributesView" HorizontalAlignment="Left" Height="374" Margin="10,157,0,0" VerticalAlignment="Top" Width="276">
 						<ListView.ItemTemplate>
 							<DataTemplate>
@@ -60,13 +61,14 @@
 										<ColumnDefinition Width="*"/>
 									</Grid.ColumnDefinitions>
 									<TextBlock Text="{Binding Name}" Grid.Column="0"/>
-									<ToggleButton Checked="AProf_Checked" Unchecked="AProf_Unchecked" Grid.Column="1">Proficient</ToggleButton>
-									<TextBox Text="(Value)" Grid.Column="2" GotKeyboardFocus="TextBoxSelected" PreviewTextInput="TextBox_PreviewTextInput" DataObject.Pasting="TextBox_Pasting" TextAlignment="Center" TextChanged="UpdateValue"/>
+									<ToggleButton Checked="AProf_Checked" Unchecked="AProf_Unchecked" Grid.Column="1" Tag="{Binding Name}">Proficient</ToggleButton>
+									<TextBox Text="(Value)" Grid.Column="2" GotKeyboardFocus="TextBoxSelected" PreviewTextInput="TextBox_PreviewTextInput" DataObject.Pasting="TextBox_Pasting" TextAlignment="Center" TextChanged="UpdateValue" Tag="{Binding Name}"/>
 								</Grid>
 							</DataTemplate>
 						</ListView.ItemTemplate>
 					</ListView>
 					<Label Content="Attributes" HorizontalAlignment="Left" Margin="75,105,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="28"/>
+					<!-- Skills -->
 					<ListView HorizontalContentAlignment="Stretch" x:Name="SkillsView" HorizontalAlignment="Left" Height="374" Margin="500,157,0,0" VerticalAlignment="Top" Width="276">
 						<ListView.ItemTemplate>
 							<DataTemplate>
@@ -78,7 +80,7 @@
 									</Grid.ColumnDefinitions>
 									<TextBlock Text="{Binding Name}" Grid.Column="0"/>
 									<TextBlock Text="{Binding AttributeName}" Grid.Column="1" Opacity="80" TextAlignment="Center"/>
-									<ToggleButton Checked="Prof_Checked" Unchecked="Prof_Unchecked" Grid.Column="2" Content="Proficient"/>
+									<ToggleButton Checked="Prof_Checked" Unchecked="Prof_Unchecked" Grid.Column="2" Content="Proficient" Tag="{Binding Name}"/>
 								</Grid>
 							</DataTemplate>
 						</ListView.ItemTemplate>
