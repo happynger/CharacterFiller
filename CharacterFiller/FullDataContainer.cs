@@ -19,5 +19,6 @@ namespace CharacterFiller
 		public string XP;
 		public string Race;
 		public string Speed;
+		public int ProfBonus;
 	}
 }

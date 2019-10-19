@@ -111,13 +111,14 @@ namespace CharacterFiller
 				e.CancelCommand();
 		}
 
-		private readonly Regex _regex = new Regex("[^0-9.-]+");
+		private readonly Regex _regex = new Regex("[^0-9-]+");
 
 		private bool IsTextAllowed(string text)
 			=> !_regex.IsMatch(text);
 
 		private void FillTheFile(object sender, RoutedEventArgs e)
 		{
+			int profb = (int)Math.Ceiling(int.Parse(LevelTB.Text) / 4.0) + 1;
 			PDFFiller.dataContainer = new FullDataContainer()
 			{
 				Attributes = attributes,
@@ -130,7 +131,8 @@ namespace CharacterFiller
 				Player_Name = PNameTB.Text,
 				Race = RaceTB.Text,
 				Speed = SpeedTB.Text,
-				XP = XPTB.Text
+				XP = XPTB.Text,
+				ProfBonus = profb
 			};
 
 			PDFFiller.Fill(FileName.Text);
@@ -173,12 +175,22 @@ namespace CharacterFiller
 		public int Value { get; set; }
 		public int ModValue => (Value / 2) - 5;
 		public int ID { get; set; }
+		public string ST_Field => $"ST {Name}";
+		public string ST_Prof
+		{
+			get
+			{
+				int value = ID == 0 ? 11 : 17;
+				return $"Check Box {value + ID}";
+			}
+		}
 	}
 
 	public class SkillItem : IItem
 	{
 		public string Name { get; set; }
 		public string PDF_Name { get; set; } = null;
+		public string Prof_Name => $"Check Box {23 + ID}";
 		public bool Prof { get; set; } = false;
 		public int ID { get; set; }
 		public AttributeID AttributeLink { get; set; }
@@ -187,6 +199,6 @@ namespace CharacterFiller
 
 	public enum AttributeID
 	{
-		DEX, STR, CON, WIS, INT, CHA
+		STR, DEX, CON, INT, WIS, CHA
 	}
 }

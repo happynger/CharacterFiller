@@ -9,14 +9,16 @@ using System.Threading.Tasks;
 
 namespace CharacterFiller
 {
-	public class Downloader
+	public static class Downloader
 	{
+		public static bool Finished = false;
+
 		public static void Download(string url, string destination)
 		{
 			Console.WriteLine("Started Downloading");
 			WebClient webClient = new WebClient();
 			ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
-			webClient.DownloadFileCompleted += (_, __) => Debug.WriteLine("Download Comleted");
+			webClient.DownloadFileCompleted += (_, __) => Finished = true;
 			webClient.DownloadProgressChanged += (_, e) => Debug.WriteLine($"{e.ProgressPercentage}%");
 			try
 			{
